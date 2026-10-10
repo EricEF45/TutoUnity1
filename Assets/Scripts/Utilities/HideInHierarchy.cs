@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEditor;
 
-namespace Unity.Utilities
+// ReSharper disable once CheckNamespace
+namespace Scripts.Utilies
 {
     public class HideInHierarchy : MonoBehaviour
     {

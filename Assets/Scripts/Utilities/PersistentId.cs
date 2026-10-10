@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-namespace Unity.Utilities
+// ReSharper disable once CheckNamespace
+namespace Scripts.Utilies
 {
-
     [ExecuteInEditMode]
     public class PersistentId : MonoBehaviour
     {
@@ -11,7 +11,7 @@ namespace Unity.Utilities
         private string id;
 
         // Public getter to read the ID from other scripts
-        public string Id { get { return id; } }
+        public string Id => id;
 
         // Called when the script is first added or reset in the inspector
         private void Reset()

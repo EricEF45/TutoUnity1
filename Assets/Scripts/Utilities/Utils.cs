@@ -3,11 +3,12 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Unity.Utilities
+// ReSharper disable once CheckNamespace
+namespace Scripts.Utilies
 {
     public static class Utils
     {
-        static public void DestroyComponentWithUndo<T>(this GameObject go) where T : UnityEngine.Object
+        public static void DestroyComponentWithUndo<T>(this GameObject go) where T : UnityEngine.Object
         {
             var c = go.GetComponent<T>();
             if (c != null)
@@ -31,7 +32,7 @@ namespace Unity.Utilities
             }
         }
 
-        static public void AddComponentWithUndo<T>(this GameObject go) where T : UnityEngine.Component
+        public static void AddComponentWithUndo<T>(this GameObject go) where T : UnityEngine.Component
         {
             var c = go.GetComponent<T>();
             if (c == null)
@@ -55,14 +56,14 @@ namespace Unity.Utilities
             }
         }
 
-        private static bool isprocessing = false;
+        private static bool _isprocessing = false;
         public static void ExecuteMenuOnce(Action a)
         {
 #if UNITY_EDITOR
-            if (isprocessing) return;
-            isprocessing = true;
+            if (_isprocessing) return;
+            _isprocessing = true;
             // Schedule the flag reset to happen after Unity finishes executing all menu iterations
-            EditorApplication.delayCall += () => { isprocessing = false; };
+            EditorApplication.delayCall += () => { _isprocessing = false; };
 #endif
             a();
         }

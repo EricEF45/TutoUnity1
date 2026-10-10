@@ -1,6 +1,6 @@
 using UnityEditor;
 
-namespace Unity.Utilities.Editor
+namespace Scripts.Utilies
 {
     public static class ItemsToggler
     {
